@@ -15,7 +15,7 @@ export class AuthenticationService {
 //store JWT token in session
   authenticate(username, password) {
     return this.httpClient
-      .post<any>("http://localhost:8080/authenticate", { username, password })
+      .post<any>("https://testwebapp4321.azurewebsites.net/authenticate", { username, password })
       .pipe(
         map(userData => {
           sessionStorage.setItem("username", username);

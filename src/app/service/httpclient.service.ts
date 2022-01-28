@@ -17,18 +17,18 @@ export class HttpClientService {
   constructor(private httpClient: HttpClient) {}
 
   getEmployees() {
-    return this.httpClient.get<Employee[]>("http://localhost:8080/employees");
+    return this.httpClient.get<Employee[]>("https://testwebapp4321.azurewebsites.net/employees");
   }
 
   public deleteEmployee(employee) {
     return this.httpClient.delete<Employee>(
-      "http://localhost:8080/employees" + "/" + employee.empId
+      "https://testwebapp4321.azurewebsites.net/employees" + "/" + employee.empId
     );
   }
 
   public createEmployee(employee) {
     return this.httpClient.post<Employee>(
-      "http://localhost:8080/employees",
+      "https://testwebapp4321.azurewebsites.net/employees",
       employee
     );
   }
